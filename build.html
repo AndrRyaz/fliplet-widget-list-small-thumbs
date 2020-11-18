@@ -1,5 +1,5 @@
 {{#if items.length}}
-<div data-list-thumb-s-id="{{id}}" data-filter-id="{{id}}" data-list-thumb-s-uuid="{{uuid}}" class="list list-thumb-s {{#if swipeToSave}}list-swipe-save{{/if}}">
+<div data-list-thumb-s-id="{{id}}" data-filter-id="{{id}}" data-list-uuid="{{uuid}}" data-list-thumb-s-uuid="{{uuid}}" class="list list-thumb-s {{#if swipeToSave}}list-swipe-save{{/if}}">
   {{#if swipeToSave}}
   <div class="filter-wrapper">
     <ul class="list-save-filter">
@@ -16,7 +16,7 @@
   <ul class="list-holder {{#if swipeToSave}}list-swipe{{/if}}">
     {{#each items}}
     <li class="{{#if linkAction}}linked{{/if}} {{#if imageConf}}has-image{{else}}no-image{{/if}} {{#if icon}}has-icon{{else}}no-icon{{/if}}" data-thumb-s-item-id="{{id}}">
-      <div class="list-image" style="background-color: {{color}};{{#if imageConf}} background-image: url('{{imageConf.url}}'){{/if}}">
+      <div class="list-image" {{#if imageConf}}style="background-image: url('{{imageConf.url}}')"{{/if}}>
         {{#unless imageConf}}
           {{#if icon}}
           <div class="fl-list-icon">
@@ -30,6 +30,9 @@
         {{#if description}}
         <p>{{nl2br description}}</p>{{/if}}
       </div>
+      <span class="list-icon">
+        <i class="fa fa-angle-right"></i>
+      </span>
     </li>
     {{/each}}
   </ul>
@@ -45,6 +48,9 @@
         <p class="list-title">List item 1</p>
         <p>This is a default item, edit your list's settings to configure your content. Don't forget to view your app on different devices by changing the device preview.</p>
       </div>
+      <span class="list-icon">
+        <i class="fa fa-angle-right"></i>
+      </span>
     </li>
     <li class="">
       <div class="list-image" style="background-color: #c7c7c7;">
@@ -54,6 +60,9 @@
         <p class="list-title">List item 2</p>
         <p>This is a default item, edit your list's settings to configure your content. Don't forget to view your app on different devices by changing the device preview.</p>
       </div>
+      <span class="list-icon">
+        <i class="fa fa-angle-right"></i>
+      </span>
     </li>
     <li class="">
       <div class="list-image" style="background-color: #c7c7c7;">
@@ -63,6 +72,9 @@
         <p class="list-title">List item 3</p>
         <p>This is a default item, edit your list's settings to configure your content. Don't forget to view your app on different devices by changing the device preview.</p>
       </div>
+      <span class="list-icon">
+        <i class="fa fa-angle-right"></i>
+      </span>
     </li>
   </ul>
 </div>
